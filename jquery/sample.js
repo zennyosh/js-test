@@ -18,10 +18,10 @@ var timer = window.setInterval(() => {
 
 // データを表示する displayData 関数
 function displayData() {
-var txt = document.getElementById("txt");   // データを表示するdiv要素の取得
-txt.innerHTML = "x: " + aX + "<br>"         // x軸の値
+  var newText = "x: " + aX + "<br>"         // x軸の値
               + "y: " + aY + "<br>"         // y軸の値
               + "z: " + aZ;                 // z軸の値
+  $('#txt').html(newText);
 }
 
 $(function(){
