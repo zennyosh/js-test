@@ -76,7 +76,7 @@ console.log(token);
       headers: {
         "Authorization" : "Bearer " + token,
 //        "Content-Type" : "application/json"
-//        "Content-Type" : "text/plane"
+        "Content-Type" : "text/plane"
       },
       data: "EP1000000",
       dataType : 'json',
