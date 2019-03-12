@@ -73,13 +73,9 @@ console.log(token);
 //        "Authorization" : "Bearer " + token
 //      },
       type: "POST",
-//      beforeSend : function( xhr ) {
-//          xhr.setRequestHeader( 'Authorization', 'Bearer dbZuq4UWr6GXqMxMnShqKHWRjYzT' );
-//      },
       headers: {
-//        "origin" : "*",
         "Authorization" : "Bearer " + token,
-        "Content-Type" : "application/json"
+//        "Content-Type" : "application/json"
 //        "Content-Type" : "text/plane"
       },
       data: "EP1000000",
