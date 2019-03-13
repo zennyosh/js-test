@@ -41,8 +41,8 @@ $(function(){
  *
  */
 var token = "";
-consumer_key = "mavrkKzZhP0dMNNbXnrAzkCmkywUac2f";
-consumer_secret = "2klF2fBMMsDYqdf2";
+consumer_key = "my-key";
+consumer_secret = "my-secret-key";
 key = consumer_key + ":" + consumer_secret;
 console.log("key = " + key);
 base64 = window.btoa(key);
