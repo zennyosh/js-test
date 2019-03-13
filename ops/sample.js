@@ -1,3 +1,37 @@
+// Get the iframe object
+console.log("1");
+  window.onload = function(){
+console.log("2");
+var client = document.getElementById('client').contentWindow;
+
+// Add an event listener to receive messages from the iframe
+window.addEventListener("message", receiveMessage, false);
+
+  // Create the data string to be passed to the OPS JavaScript
+  var data = "{'url' : 'http://ops.epo.org/3.2/rest-services/publisheddata/publication/docdb/EP1000000/biblio', "
+  + "'type' : 'GET', "
+  + "'headers' : { 'Accept': 'application/json', 'Authorization': 'Bearer dkFNK0Xkoe2oV1SwjajyQzclORNl' } }";
+
+  // Use the postMessage() method in order to send the data to the iframe
+  client.postMessage(data, 'http://ops.epo.org');
+  console.log(data);
+  }
+console.log("3");
+
+
+// Event handler that will handle messages from the iframe
+function receiveMessage(event){
+  // Check origin of the event!
+  if (event.origin == "http://ops.epo.org") {
+    var dataJSON = eval('(' + event.data + ')');
+    // work with data/display data
+    console.log('data received: ', dataJSON);
+  } else {
+    alert("Got message from unknown source.");
+  }
+}
+
+
 $(function(){
   console.log("Hello World!");
 });
@@ -63,8 +97,35 @@ $(function(){
 //      $('#txt').html("認証済");
 //      console.log(token);
 //    } else {
-console.log(token);
+  console.log(token);
 
+  //$('#client').load(function() {
+  // Get the iframe object
+  var client = document.getElementById('client').contentWindow;
+  console.log("1");
+//  window.onload = function(){
+  console.log("2");
+
+  // Add an event listener to receive messages from the iframe
+  window.addEventListener("message", receiveMessage, false);
+
+    // Create the data string to be passed to the OPS JavaScript
+    var data = "{'url' : 'http://ops.epo.org/3.2/rest-services/publisheddata/publication/docdb/EP1000000/biblio', "
+    + "'type' : 'GET', "
+    + "'headers' : { 'Accept': 'application/json', 'Authorization': 'Bearer dkFNK0Xkoe2oV1SwjajyQzclORNl' } }";
+
+    // Use the postMessage() method in order to send the data to the iframe
+    client.postMessage(data, 'http://ops.epo.org');
+    console.log(data);
+//  }
+  console.log("3");
+
+//  var xhr = new XMLHttpRequest();
+//  xhr.open("GET", "https://ops.epo.org/3.2/rest-services/published-data/publication/docdb/" + $('#number').val() + "/abstract");
+//  xhr.setRequestHeader("Authorization","Bearer dkFNK0Xkoe2oV1SwjajyQzclORNl");
+//  xhr.send();
+
+/*
     $.ajax({
       url: "https://ops.epo.org/3.2/rest-services/published-data/publication/docdb/abstract",
 //      url: "https://ops.epo.org/3.2/rest-services/published-data/publication/docdb/" + $('#number').val() + "/abstract",
@@ -98,9 +159,8 @@ console.log(token);
     }).always(function(data) {
       // 完了時
     });
+*/
 
-//    $('#txt').html("key = " + key + "<br>" + "enc = " + base64);
-//  }
   });
 });
 
