@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sample1</title>
+<script src="app.js"></script>
+</head>
+
+
+<body onload="begin()" onkeydown="move(event)">
+
+<div style="position:absolute;left:20px; top:20px">
+<h1>Sample1</h1>
+<button id="start" onclick="start()"> START </button>
+</div>
+
+<canvas id="back" width="240" height="240"
+	style="position:absolute; left:20px; top:200px; background-color:green"></canvas>
+<canvas id="game" width="240" height="240"
+	style="position:absolute; left:20px; top:200px; background-color:transparent"></canvas>
+
+</body>
+</html>
