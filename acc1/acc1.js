@@ -50,6 +50,9 @@ function drawBall() {
       aZ *= -1;
   }
   context.clearRect(0, 0, canvas.width, canvas.height);   // canvasの内容を消す clearRect(x, y, w, h)
+//context.fillRect(150,60, 20, 20);
+//context.fillRect(centerX - d * aX, centerY + d * aY, 20, 20);
+//console.log(centerX - d * aX, centerX - d * aY);
   context.beginPath();                        // 描画開始
   context.arc(centerX - d * aX,               // 円を描く arc(x, y, 半径, 開始角度, 終了角度)
               centerY + d * aY,               // 加速度xとyに、1m/s^2あたりで動く量dをかける
