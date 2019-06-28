@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', (req, res,next) => {
-  var msg = '???';
+  var msg = '入力';
   if (req.session.message != undefined){
     msg="Last msg: " + req.session.message;
   }
