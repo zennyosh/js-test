@@ -9,6 +9,7 @@ var session = require('express-session');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var hello = require('./routes/hello');
+var rss = require('./routes/rss');
 var ajax = require('./routes/ajax');
 
 var app = express();
@@ -32,10 +33,11 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(session(session_opt));
 
-app.use('/', routes);
+app.use('/'     , routes);
 app.use('/users', users);
 app.use('/hello', hello);
-app.use('/ajax', ajax);
+app.use('/rss'  , rss);
+app.use('/ajax' , ajax);
 
 /// catch 404 and forwarding to error handler
 app.use(function(req, res, next) {
